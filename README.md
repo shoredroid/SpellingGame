@@ -23,7 +23,7 @@ Navigation Enhancements:
 
 **Local Storage:**
 -------------------------------------------
--Reimplemented local storage to retain the word list across sessions. (Issue on the PWA)
+-Reimplemented local storage to retain the word list across sessions.
 
 **Improved Functionality:**
 -------------------------------------------
