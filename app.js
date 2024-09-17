@@ -1,11 +1,14 @@
-let points = 0;
-let money = 0;
+let points = parseInt(localStorage.getItem("points")) || 0; // Load points from local storage
+let money = parseFloat(localStorage.getItem("money")) || 0.00; // Load money from local storage
 let wordList = JSON.parse(localStorage.getItem("wordList")) || []; // Load word list from local storage
 const pointsDisplay = document.getElementById("pointsDisplay");
 const moneyDisplay = document.getElementById("moneyDisplay");
 
+// Update local storage for wordList, points, and money
 function updateLocalStorage() {
     localStorage.setItem("wordList", JSON.stringify(wordList));
+    localStorage.setItem("points", points); // Save points to local storage
+    localStorage.setItem("money", money.toFixed(2)); // Save money to local storage
 }
 
 function addWord() {
@@ -48,6 +51,7 @@ function submitAnswer() {
     document.getElementById("answer").value = ""; // Automatically clear the answer field for the next word
 
     updateScore();
+    updateLocalStorage();  // Save points and money to local storage
     nextWord();
 }
 
@@ -72,11 +76,13 @@ function resetProgress() {
     points = 0;
     money = 0;
     updateScore();
+    updateLocalStorage();  // Reset local storage as well
 }
 
 function resetMoney() {
     money = 0;
     updateScore();
+    updateLocalStorage();  // Save the reset money to local storage
 }
 
 function nextWord() {
@@ -111,6 +117,13 @@ function backToLanding() {
     document.getElementById("parentPanel").style.display = "none";
     document.getElementById("landingPage").style.display = "block";
 }
+
+// Load the score when the app loads
+window.onload = function() {
+    updateScore(); // Ensure the points and money are displayed correctly
+    nextWord(); // Load the first word in case quiz panel is opened
+};
+
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
   // Register the service worker
