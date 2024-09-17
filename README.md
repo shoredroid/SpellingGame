@@ -1,5 +1,9 @@
 # SpellingGame
-Changelog: Version 1 to Version 1.5
+Powered By: ShoreDroid
+
+Held By: 2855745 ONTARIO INC.
+
+Contact: info.kaisda@gmail.com
 
 Basic app functionality including:
 ------------------------------------------
