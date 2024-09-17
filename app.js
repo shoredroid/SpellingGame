@@ -111,3 +111,16 @@ function backToLanding() {
     document.getElementById("parentPanel").style.display = "none";
     document.getElementById("landingPage").style.display = "block";
 }
+// Check if service workers are supported
+if ('serviceWorker' in navigator) {
+  // Register the service worker
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(error => {
+        console.error('Service Worker registration failed:', error);
+      });
+  });
+}
