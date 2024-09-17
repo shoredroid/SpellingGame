@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #6a1b9a;
+}
+
+h3 {
+    color: #8e24aa;
+}
+
+.btn {
+    background-color: #7b1fa2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: #9c27b0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.score-section {
+    margin: 20px 0;
+}
+
+.money-display {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.feedback {
+    margin-top: 10px;
+    font-style: italic;
+    color: #8e24aa;
+}
+
+.star {
+    font-size: 30px;
+    color: gold;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    animation: starAnimation 1s ease-in-out;
+}
+
+@keyframes starAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0) scale(1.5);
+    }
+}
