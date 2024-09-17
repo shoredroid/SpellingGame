@@ -41,8 +41,8 @@ Navigation Enhancements:
 
 -Improved CSS for a more modern look and feel, including a star animation for the first $1.00 increment.
 
-Removed Features:
-
+**Removed Features:**
+-------------------------------------------
 -Removed the request payout button and its associated functionality.
 
 **Bug Fixes:**
