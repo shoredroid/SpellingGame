@@ -1,8 +1,11 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f3f4f6;
     color: #333;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -19,6 +22,7 @@ h3 {
     color: #8e24aa;
 }
 
+/* Button styles with 3D effect and bounce animation */
 .btn {
     background-color: #7b1fa2;
     color: white;
@@ -27,20 +31,49 @@ h3 {
     border-radius: 5px;
     cursor: pointer;
     margin: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.14);
+}
+
+.btn:focus {
+    outline: none;
+    animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .btn:hover {
     background-color: #9c27b0;
 }
 
+/* Input field styles */
 input[type="text"] {
     padding: 10px;
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 80%;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* Score section styles */
 .score-section {
     margin: 20px 0;
 }
@@ -50,12 +83,14 @@ input[type="text"] {
     font-weight: bold;
 }
 
+/* Feedback message styles */
 .feedback {
     margin-top: 10px;
     font-style: italic;
     color: #8e24aa;
 }
 
+/* Star animation for money increments */
 .star {
     font-size: 30px;
     color: gold;
@@ -78,4 +113,65 @@ input[type="text"] {
         opacity: 0;
         transform: translateY(0) scale(1.5);
     }
+}
+
+/* Landing page styles */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f3f4f6;
+}
+
+.landing-page button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6a1b9a;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.landing-page button:hover {
+    background-color: #9c27b0;
+}
+
+.landing-page button:focus {
+    outline: none;
+    animation: bounce 0.3s;
+}
+
+/* Panel styles */
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.panel button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7b1fa2;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.panel button:hover {
+    background-color: #9c27b0;
+}
+
+.panel button:focus {
+    outline: none;
+    animation: bounce 0.3s;
 }
