@@ -41,9 +41,14 @@ Navigation Enhancements:
 
 -Improved CSS for a more modern look and feel, including a star animation for the first $1.00 increment.
 
+-Added Version Code and Centered the overall layout.
+
+
 **Removed Features:**
 -------------------------------------------
 -Removed the request payout button and its associated functionality.
+
+-Removed the Spell Check and Autocomplete functionality from the Quiz Panel
 
 **Bug Fixes:**
 -----------------------------------------------
