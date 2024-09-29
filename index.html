@@ -12,45 +12,39 @@
 
 <div class="container">
     <h2>Spelling Game for $$$</h2>
-
-    <!-- Landing Page -->
     <div id="landingPage">
         <h3>Choose an option:</h3>
         <button class="btn" onclick="openParentalPanel()">Parental Panel</button>
         <button class="btn" onclick="startQuiz()">Kid Panel (Start Quiz)</button>
     </div>
 
-    <!-- Parent panel -->
     <div id="parentPanel" style="display: none;">
         <h3>Parent's Panel</h3>
         <input type="text" id="newWord" placeholder="Enter a new word" />
         <button class="btn" onclick="addWord()">Add Word</button>
-        <br><br>
         <button class="btn" onclick="clearWordList()">Clear Word List</button>
         <button class="btn" onclick="resetProgress()">Reset Points & Money</button>
         <button class="btn" onclick="resetMoney()">Reset Money Only</button>
-        <br><br>
-        <button class="btn" onclick="backToLanding()">Back to Landing Page</button> <!-- Back button added -->
+        <button class="btn" onclick="backToLanding()">Back to Landing Page</button>
     </div>
 
-    <!-- Quiz section -->
     <div id="quizPanel" style="display: none;">
         <h3>Spell the word:</h3>
         <p id="wordPrompt" class="wordPrompt"></p>
-        <input type="text" id="answer" placeholder="Your answer" />
+        <input type="text" id="answer" placeholder="Your answer" autocomplete="off" spellcheck="false" />
         <p id="feedback" class="feedback"></p>
-
         <div class="score-section">
             <p>Points: <span id="pointsDisplay">0</span></p>
             <p class="money-display">Money: $<span id="moneyDisplay">0.00</span></p>
         </div>
-
-        <button class="btn" onclick="backToLanding()">Back to Landing Page</button> <!-- Back button added -->
+        <button class="btn" onclick="backToLanding()">Back to Landing Page</button>
     </div>
-
 </div>
 
-<script src="app.js"></script>
+<!-- Footer with version code -->
+<footer>
+    <p>Version 1.5.1</p>
+</footer>
 
+<script src="app.js"></script>
 </body>
-</html>
