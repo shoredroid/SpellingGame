@@ -25,6 +25,8 @@ Navigation Enhancements:
 -------------------------------------------
 -Reimplemented local storage to retain the word list across sessions.
 
+-Trying to force app update while maintaining local storage
+
 **Improved Functionality:**
 -------------------------------------------
 -Enter key now submits answers in both the quiz and word addition fields.
