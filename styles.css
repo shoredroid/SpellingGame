@@ -1,7 +1,7 @@
 /* General styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f3f4f6;
+    background-color: #f0f0f0; /* Lighter background for contrast */
     color: #333;
     text-align: center;
     margin: 0;
@@ -16,6 +16,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: auto;
+    background-color: #ffffff; /* White background for contrast */
+    border: 2px solid #d1c4e9; /* Soft purple border for contrast */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 30px; /* Extra padding for spacing inside the container */
     height: 100vh; /* Ensure it fills the height of the viewport */
 }
 
