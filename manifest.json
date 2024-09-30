@@ -1,0 +1,24 @@
+{
+  "name": "Spelling Game for $$$",
+  "short_name": "Spelling Game",
+  "description": "A fun spelling game where kids can improve their spelling skills and earn money!",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f3f4f6",
+  "theme_color": "#6a1b9a",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait",
+  "scope": "/",
+  "version": "1.5.2"
+}
