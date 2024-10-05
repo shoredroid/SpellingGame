@@ -47,7 +47,6 @@
                 <button class="key" onclick="typeLetter('A')">A</button>
                 <button class="key" onclick="typeLetter('B')">B</button>
                 <button class="key" onclick="typeLetter('C')">C</button>
-                <!-- Add all letters A-Z in similar fashion -->
             </div>
             <!-- Add more rows as needed -->
             <div class="keyboard-row">
@@ -61,6 +60,16 @@
             </div>
         </div>
 
+        <div class="score-section">
+            <p>Points: <span id="pointsDisplay">0</span></p>
+            <p class="money-display">Money: $<span id="moneyDisplay">0.00</span></p>
+        </div>
+
+        <button class="btn" onclick="backToLanding()">Back to Landing Page</button>
+    </div>
+
+</div>
+
 <!-- Footer with version code -->
 <footer>
     <p>Version B1.0.1</p>
@@ -68,3 +77,4 @@
 
 <script src="app.js"></script>
 </body>
+</html>
