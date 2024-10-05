@@ -148,7 +148,7 @@ input[type="text"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px; /* Reduced font size for smaller buttons */
+    font-size: 18px; /* Reduced font size for smaller buttons */
     transition: transform 0.2s ease-in-out; /* Animation when clicked */
 }
 
