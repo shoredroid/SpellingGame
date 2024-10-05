@@ -136,34 +136,45 @@ input[type="text"] {
     align-items: center;
 }
 
+/* Make the keyboard rows tightly spaced */
 .keyboard-row {
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px; /* Tighten the space between rows */
 }
 
+/* Make the buttons tighter with minimal spacing and smaller size */
 .key {
     background-color: #7b1fa2;
     color: white;
-    padding: 8px 16px; /* Reduced padding to make the buttons smaller */
-    margin: 5px;
+    padding: 8px;
+    margin: 2px; /* Tighter spacing between buttons */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px; /* Reduced font size for smaller buttons */
-    transition: transform 0.2s ease-in-out; /* Animation when clicked */
+    font-size: 16px; /* Reduced font size to fit buttons */
+    width: 38px;  /* Tight button width */
+    height: 38px;  /* Tight button height */
+    text-align: center;
+    line-height: 38px;  /* Vertically center text */
+    display: inline-block;
 }
 
+/* Slightly larger Enter button */
+.key.enter {
+    width: 58px;  /* Make the Enter button wider */
+    background-color: #6a1b9a;
+}
+
+/* Button hover effect */
 .key:hover {
     background-color: #9c27b0;
 }
 
+/* Press effect for keys */
 .key:active {
     transform: translateY(2px) scale(0.98); /* Adds a slight scale effect */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.14);
-}
-
-.key:focus {
-    outline: none;
-    animation: bounce 0.3s;
 }
 
 /* Footer styles for version */
