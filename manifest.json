@@ -1,6 +1,6 @@
 {
-  "name": "Spelling Game for $$$ Beta",
-  "short_name": "Spelling Game Beta",
+  "name": "Spelling Game for $$$",
+  "short_name": "Spelling Game",
   "description": "A fun spelling game where kids can improve their spelling skills and earn money!",
   "start_url": "/index.html",
   "display": "standalone",
@@ -20,5 +20,5 @@
   ],
   "orientation": "portrait",
   "scope": "/",
-  "version": "B1.1.0"
+  "version": "1.6.0"
 }
