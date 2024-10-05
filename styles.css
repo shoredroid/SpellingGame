@@ -16,13 +16,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Ensure it's centered horizontally */
     height: auto;
     background-color: #ffffff; /* White background for contrast */
     border: 2px solid #d1c4e9; /* Soft purple border for contrast */
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     padding: 30px; /* Extra padding for spacing inside the container */
-    height: 100vh; /* Ensure it fills the height of the viewport */
+    min-height: 100vh; /* Ensure it fills the height of the viewport */
 }
 
 /* Header styles */
@@ -218,10 +219,13 @@ input[type="text"] {
 /* Footer styles for version */
 footer {
     text-align: center;
-    margin-top: 20px;
     color: #666;
     font-size: 14px;
     position: fixed;
-    bottom: 10px;
-    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #f3f4f6;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* A slight shadow for depth */
 }
