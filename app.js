@@ -3,6 +3,7 @@ let money = parseFloat(localStorage.getItem("money")) || 0.00; // Load money fro
 let wordList = JSON.parse(localStorage.getItem("wordList")) || []; // Load word list from local storage
 const pointsDisplay = document.getElementById("pointsDisplay");
 const moneyDisplay = document.getElementById("moneyDisplay");
+let isUpperCase = true; // Start with uppercase letters
 
 // Update local storage for wordList, points, and money
 function updateLocalStorage() {
@@ -121,6 +122,9 @@ function backToLanding() {
 // Function to add letter to the answer field
 function typeLetter(letter) {
     const answerField = document.getElementById("answer");
+    if (!isUpperCase) {
+        letter = letter.toLowerCase(); // Convert to lowercase if Shift is off
+    }
     answerField.value += letter;
 }
 
@@ -133,6 +137,20 @@ function deleteLetter() {
 // Function to clear the entire input field
 function clearInput() {
     document.getElementById("answer").value = "";
+}
+
+// Function to toggle between uppercase and lowercase letters
+function toggleCase() {
+    isUpperCase = !isUpperCase;
+    const keys = document.querySelectorAll('.key');
+    
+    keys.forEach((key) => {
+        let letter = key.innerText;
+        // Only change letter keys, not action buttons
+        if (letter.length === 1 && /[a-zA-Z]/.test(letter)) {
+            key.innerText = isUpperCase ? letter.toUpperCase() : letter.toLowerCase();
+        }
+    });
 }
 
 // Load the score when the app loads
