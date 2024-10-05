@@ -54,6 +54,7 @@
                 <button class="key" onclick="typeLetter('I')">I</button>
                 <button class="key" onclick="typeLetter('O')">O</button>
                 <button class="key" onclick="typeLetter('P')">P</button>
+                <button class="key" onclick="deleteLetter()">BS</button>
             </div>
             <!-- Add more rows as needed -->
             <div class="keyboard-row">
@@ -69,6 +70,7 @@
             </div>
             <!-- Add more rows as needed -->
             <div class="keyboard-row">
+                <button class="key" onclick="toggleCase()">Shift</button>
                 <button class="key" onclick="typeLetter('Z')">Z</button>
                 <button class="key" onclick="typeLetter('X')">X</button>
                 <button class="key" onclick="typeLetter('C')">C</button>
@@ -76,9 +78,9 @@
                 <button class="key" onclick="typeLetter('B')">B</button>
                 <button class="key" onclick="typeLetter('N')">N</button>
                 <button class="key" onclick="typeLetter('M')">M</button>
+                <button class="key" onclick="submitAnswer()">Enter</button>
             </div>
             <div class="keyboard-row">
-                <button class="key" onclick="deleteLetter()">Delete</button>
                 <button class="key" onclick="clearInput()">Clear</button>
             </div>
         </div>
@@ -95,7 +97,7 @@
 
 <!-- Footer with version code -->
 <footer>
-    <p>Version B1.0.1</p>
+    <p>Version B1.0.2</p>
 </footer>
 
 <script src="app.js"></script>
