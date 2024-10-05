@@ -35,21 +35,35 @@
     <div id="quizPanel" style="display: none;">
         <h3>Spell the word:</h3>
         <p id="wordPrompt" class="wordPrompt"></p>
-        <input type="text" id="answer" placeholder="Your answer" autocomplete="off" spellcheck="false" />
-        <p id="feedback" class="feedback"></p>
-        
-        <div class="score-section">
-            <p>Points: <span id="pointsDisplay">0</span></p>
-            <p class="money-display">Money: $<span id="moneyDisplay">0.00</span></p>
+
+        <!-- Form with custom keyboard and disabled default keyboard -->
+        <form autocomplete="off">
+            <input type="text" id="answer" readonly placeholder="Your answer" /> <!-- Default keyboard disabled -->
+        </form>
+
+        <!-- Custom Keyboard -->
+        <div class="custom-keyboard">
+            <div class="keyboard-row">
+                <button class="key" onclick="typeLetter('A')">A</button>
+                <button class="key" onclick="typeLetter('B')">B</button>
+                <button class="key" onclick="typeLetter('C')">C</button>
+                <!-- Add all letters A-Z in similar fashion -->
+            </div>
+            <!-- Add more rows as needed -->
+            <div class="keyboard-row">
+                <button class="key" onclick="typeLetter('X')">X</button>
+                <button class="key" onclick="typeLetter('Y')">Y</button>
+                <button class="key" onclick="typeLetter('Z')">Z</button>
+            </div>
+            <div class="keyboard-row">
+                <button class="key" onclick="deleteLetter()">Delete</button>
+                <button class="key" onclick="clearInput()">Clear</button>
+            </div>
         </div>
-        
-        <button class="btn" onclick="backToLanding()">Back to Landing Page</button>
-    </div>
-</div>
 
 <!-- Footer with version code -->
 <footer>
-    <p>Version B1.0.0</p>
+    <p>Version B1.0.1</p>
 </footer>
 
 <script src="app.js"></script>
