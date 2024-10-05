@@ -28,12 +28,6 @@ document.getElementById("newWord").addEventListener("keypress", function (event)
     }
 });
 
-document.getElementById("answer").addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        submitAnswer();
-    }
-});
-
 function submitAnswer() {
     const answer = document.getElementById("answer").value.trim().toLowerCase();
     const wordPrompt = document.getElementById("wordPrompt").innerText.toLowerCase();
@@ -55,6 +49,12 @@ function submitAnswer() {
     updateLocalStorage();  // Save points and money to local storage
     nextWord();
 }
+
+document.getElementById("answer").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        submitAnswer();
+    }
+});
 
 function updateScore() {
     pointsDisplay.innerText = points;
@@ -134,27 +134,30 @@ function deleteLetter() {
     answerField.value = answerField.value.slice(0, -1);
 }
 
-// Function to submit the answer when Enter is clicked
-function submitAnswer() {
-    const answer = document.getElementById("answer").value.trim();
-    const wordPrompt = document.getElementById("wordPrompt").innerText.trim();
-    
-    if (answer.toLowerCase() === wordPrompt.toLowerCase()) {
-        points++;
-        document.getElementById("feedback").innerText = "Correct!";
-        if (points % 10 === 0) {
-            money++;
-            triggerStarAnimation();
-        }
-    } else {
-        document.getElementById("feedback").innerText = "Try again!";
-    }
-
-    document.getElementById("answer").value = ""; // Clear the answer field for the next word
-    updateScore();
-    updateLocalStorage();  // Save points and money to local storage
-    nextWord();
+// Function to clear the entire input field
+function clearInput() {
+    document.getElementById("answer").value = "";
 }
+
+// Function to toggle between uppercase and lowercase letters
+function toggleCase() {
+    isUpperCase = !isUpperCase;
+    const keys = document.querySelectorAll('.key');
+    
+    keys.forEach((key) => {
+        let letter = key.innerText;
+        // Only change letter keys, not action buttons (such as Enter, Delete)
+        if (letter.length === 1 && /[a-zA-Z]/.test(letter)) {
+            key.innerText = isUpperCase ? letter.toUpperCase() : letter.toLowerCase();
+        }
+    });
+}
+
+// Load the score when the app loads
+window.onload = function() {
+    updateScore(); // Ensure the points and money are displayed correctly
+    nextWord(); // Load the first word in case quiz panel is opened
+};
 
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
