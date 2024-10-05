@@ -22,9 +22,11 @@ function addWord() {
     }
 }
 
-document.getElementById("newWord").addEventListener("keypress", function (event) {
+// Physical Enter key should trigger submitAnswer
+document.getElementById("answer").addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-        addWord();
+        event.preventDefault(); // Prevent form submission or refresh
+        submitAnswer(); // Call the submit function
     }
 });
 
@@ -49,12 +51,6 @@ function submitAnswer() {
     updateLocalStorage();  // Save points and money to local storage
     nextWord();
 }
-
-document.getElementById("answer").addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        submitAnswer();
-    }
-});
 
 function updateScore() {
     pointsDisplay.innerText = points;
