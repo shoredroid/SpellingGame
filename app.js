@@ -118,6 +118,23 @@ function backToLanding() {
     document.getElementById("landingPage").style.display = "block";
 }
 
+// Function to add letter to the answer field
+function typeLetter(letter) {
+    const answerField = document.getElementById("answer");
+    answerField.value += letter;
+}
+
+// Function to delete the last letter in the answer field
+function deleteLetter() {
+    const answerField = document.getElementById("answer");
+    answerField.value = answerField.value.slice(0, -1);
+}
+
+// Function to clear the entire input field
+function clearInput() {
+    document.getElementById("answer").value = "";
+}
+
 // Load the score when the app loads
 window.onload = function() {
     updateScore(); // Ensure the points and money are displayed correctly
