@@ -35,7 +35,12 @@
     <div id="quizPanel" style="display: none;">
         <h3>Spell the word:</h3>
         <p id="wordPrompt" class="wordPrompt"></p>
-        <input type="text" id="answer" placeholder="Your answer" autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="none" inputmode="none" />
+     
+        <!-- Form with updated input field -->
+        <form autocomplete="off">
+            <input type="text" id="answer" autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="none" placeholder="Your answer" inputmode="text" />
+        </form>
+        
         <p id="feedback" class="feedback"></p>
         
         <div class="score-section">
@@ -49,7 +54,7 @@
 
 <!-- Footer with version code -->
 <footer>
-    <p>Version 1.5.3</p>
+    <p>Version 1.5.4</p>
 </footer>
 
 <script src="app.js"></script>

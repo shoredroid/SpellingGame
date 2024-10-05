@@ -1,5 +1,5 @@
 // sw.js
-const CACHE_NAME = 'static-v4'; // Increment the cache version for new deployments
+const CACHE_NAME = 'static-v5'; // Increment the cache version for new deployments
 const urlsToCache = [
   '/',
   'index.html',
