@@ -158,12 +158,7 @@ input[type="text"] {
     text-align: center;
     line-height: 38px;  /* Vertically center text */
     display: inline-block;
-}
-
-/* Slightly larger Enter button */
-.key.enter {
-    width: 58px;  /* Make the Enter button wider */
-    background-color: #6a1b9a;
+    transition: transform 0.1s ease, background-color 0.2s ease; /* Add smooth transitions */
 }
 
 /* Button hover effect */
@@ -173,8 +168,25 @@ input[type="text"] {
 
 /* Press effect for keys */
 .key:active {
-    transform: translateY(2px) scale(0.98); /* Adds a slight scale effect */
+    transform: scale(0.95); /* Scale down the button slightly */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.14);
+    transition: transform 0.1s ease-in-out; /* Smooth press animation */
+}
+
+/* Enter button specific styling */
+.key.enter {
+    width: 58px;  /* Make the Enter button wider */
+    background-color: #6a1b9a;
+}
+
+/* Button pressed animation */
+.key:active {
+    transform: translateY(2px) scale(0.95); /* Slightly smaller on press */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.14);
+}
+
+.key:focus {
+    outline: none;
 }
 
 /* Footer styles for version */
