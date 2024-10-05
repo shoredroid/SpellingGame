@@ -22,11 +22,19 @@ function addWord() {
     }
 }
 
-// Physical Enter key should trigger submitAnswer
+// Physical Enter key should trigger submitAnswer in the quiz panel
 document.getElementById("answer").addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         event.preventDefault(); // Prevent form submission or refresh
         submitAnswer(); // Call the submit function
+    }
+});
+
+// Physical Enter key should trigger addWord in the parental panel
+document.getElementById("newWord").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent form submission or refresh
+        addWord(); // Call the add word function
     }
 });
 
@@ -157,14 +165,14 @@ window.onload = function() {
 
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
-  // Register the service worker
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(registration => {
-        console.log('Service Worker registered with scope:', registration.scope);
-      })
-      .catch(error => {
-        console.error('Service Worker registration failed:', error);
-      });
-  });
+    // Register the service worker
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+                console.error('Service Worker registration failed:', error);
+            });
+    });
 }
