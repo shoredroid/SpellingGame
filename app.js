@@ -42,7 +42,14 @@ function submitAnswer() {
     const answer = document.getElementById("answer").value.trim().toLowerCase();
     const wordPrompt = document.getElementById("wordPrompt").innerText.toLowerCase();
     
-    if (answer === wordPrompt) {
+    if (!wordPrompt) {
+        console.error('Word prompt element not found!');
+        return; // Exit if the element does not exist
+    }
+
+    const wordPromptText = wordPrompt.innerText.toLowerCase(); // Get innerText only if the element exists
+
+    if (answer === wordPromptText) {
         points++;
         document.getElementById("feedback").innerText = "Correct!";
         if (points % 10 === 0) {
