@@ -12,6 +12,7 @@ function updateLocalStorage() {
     localStorage.setItem("money", money.toFixed(2)); // Save money to local storage
 }
 
+// Function to add a new word
 function addWord() {
     const newWord = document.getElementById("newWord").value.trim();
     if (newWord) {
@@ -22,14 +23,6 @@ function addWord() {
     }
 }
 
-// Physical Enter key should trigger submitAnswer in the quiz panel
-document.getElementById("answer").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); // Prevent form submission or refresh
-        submitAnswer(); // Call the submit function
-    }
-});
-
 // Physical Enter key should trigger addWord in the parental panel
 document.getElementById("newWord").addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
@@ -38,10 +31,20 @@ document.getElementById("newWord").addEventListener("keydown", function (event) 
     }
 });
 
+// Physical Enter key should trigger submitAnswer in the quiz panel
+document.getElementById("answer").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent form submission or refresh
+        submitAnswer(); // Call the submit function
+    }
+});
+
+// Function to submit the answer
 function submitAnswer() {
     const answer = document.getElementById("answer").value.trim().toLowerCase();
-    const wordPrompt = document.getElementById("wordPrompt").innerText.toLowerCase();
-    
+    const wordPrompt = document.getElementById("wordPrompt"); // Get the word prompt element
+
+    // Check if wordPrompt exists
     if (!wordPrompt) {
         console.error('Word prompt element not found!');
         return; // Exit if the element does not exist
@@ -49,6 +52,7 @@ function submitAnswer() {
 
     const wordPromptText = wordPrompt.innerText.toLowerCase(); // Get innerText only if the element exists
 
+    // Check if the answer matches the word prompt
     if (answer === wordPromptText) {
         points++;
         document.getElementById("feedback").innerText = "Correct!";
@@ -67,11 +71,13 @@ function submitAnswer() {
     nextWord();
 }
 
+// Function to update the displayed score
 function updateScore() {
     pointsDisplay.innerText = points;
     moneyDisplay.innerText = money.toFixed(2);
 }
 
+// Function to trigger star animation
 function triggerStarAnimation() {
     const starElement = document.createElement('div');
     starElement.classList.add('star');
@@ -84,6 +90,7 @@ function triggerStarAnimation() {
     }, 1000);
 }
 
+// Function to reset progress
 function resetProgress() {
     points = 0;
     money = 0;
@@ -91,12 +98,14 @@ function resetProgress() {
     updateLocalStorage();  // Reset local storage as well
 }
 
+// Function to reset money
 function resetMoney() {
     money = 0;
     updateScore();
     updateLocalStorage();  // Save the reset money to local storage
 }
 
+// Function to get the next word
 function nextWord() {
     if (wordList.length > 0) {
         const randomIndex = Math.floor(Math.random() * wordList.length);
@@ -106,6 +115,7 @@ function nextWord() {
     }
 }
 
+// Function to start the quiz
 function startQuiz() {
     document.getElementById("landingPage").style.display = "none";
     document.getElementById("parentPanel").style.display = "none";
@@ -113,17 +123,20 @@ function startQuiz() {
     nextWord();
 }
 
+// Function to open the parental panel
 function openParentalPanel() {
     document.getElementById("landingPage").style.display = "none";
     document.getElementById("parentPanel").style.display = "block";
 }
 
+// Function to clear the word list
 function clearWordList() {
     wordList = [];
     updateLocalStorage();  // Clear local storage as well
     alert("Word list cleared!");
 }
 
+// Function to navigate back to the landing page
 function backToLanding() {
     document.getElementById("quizPanel").style.display = "none";
     document.getElementById("parentPanel").style.display = "none";
