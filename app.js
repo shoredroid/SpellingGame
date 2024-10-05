@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
 let points = parseInt(localStorage.getItem("points")) || 0; // Load points from local storage
 let money = parseFloat(localStorage.getItem("money")) || 0.00; // Load money from local storage
 let wordList = JSON.parse(localStorage.getItem("wordList")) || []; // Load word list from local storage
@@ -197,4 +196,3 @@ if ('serviceWorker' in navigator) {
             });
         });
     }
-});
