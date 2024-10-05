@@ -37,7 +37,7 @@
         <p id="wordPrompt" class="wordPrompt"></p>
 
         <!-- Form with custom keyboard and disabled default keyboard -->
-        <form autocomplete="off">
+        <form autocomplete="off" onsubmit="event.preventDefault(); submitAnswer();">
             <input type="text" id="answer" readonly placeholder="Your answer" /> <!-- Default keyboard disabled -->
         </form>
 
