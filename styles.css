@@ -1,7 +1,7 @@
 /* General styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f0f0; /* Lighter background for contrast */
+    background-color: #f0f0f0;
     color: #333;
     text-align: center;
     margin: 0;
@@ -16,13 +16,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: auto;
-    background-color: #ffffff; /* White background for contrast */
-    border: 2px solid #d1c4e9; /* Soft purple border for contrast */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    padding: 30px; /* Extra padding for spacing inside the container */
-    height: 100vh; /* Ensure it fills the height of the viewport */
+    background-color: #ffffff;
+    border: 2px solid #d1c4e9;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    min-height: 100vh;
 }
 
 /* Header styles */
@@ -127,74 +128,77 @@ input[type="text"] {
     }
 }
 
-/* Center the landing page */
-.landing-page {
+/* Custom keyboard styles */
+.custom-keyboard {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Make the keyboard rows tightly spaced */
+.keyboard-row {
+    display: flex;
     justify-content: center;
-    height: 100%;
-    background-color: #f3f4f6;
+    margin-bottom: 5px; /* Tighten the space between rows */
 }
 
-.landing-page button {
-    margin: 10px;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    background-color: #6a1b9a;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Roboto', sans-serif;
-}
-
-.landing-page button:hover {
-    background-color: #9c27b0;
-}
-
-.landing-page button:focus {
-    outline: none;
-    animation: bounce 0.3s;
-}
-
-/* Panel styles */
-.panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.panel button {
-    margin: 10px;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
+/* Make the buttons tighter with minimal spacing and smaller size */
+.key {
     background-color: #7b1fa2;
     color: white;
+    padding: 8px;
+    margin: 2px; /* Tighter spacing between buttons */
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Roboto', sans-serif;
+    font-size: 16px; /* Reduced font size to fit buttons */
+    width: 38px;  /* Tight button width */
+    height: 38px;  /* Tight button height */
+    text-align: center;
+    line-height: 38px;  /* Vertically center text */
+    display: inline-block;
+    transition: transform 0.1s ease, background-color 0.2s ease; /* Add smooth transitions */
 }
 
-.panel button:hover {
+/* Button hover effect */
+.key:hover {
     background-color: #9c27b0;
 }
 
-.panel button:focus {
+/* Press effect for keys */
+.key:active {
+    transform: scale(0.95); /* Scale down the button slightly */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.14);
+    transition: transform 0.1s ease-in-out; /* Smooth press animation */
+}
+
+/* Enter button specific styling */
+.key.enter {
+    width: 58px;  /* Make the Enter button wider */
+    background-color: #6a1b9a;
+}
+
+/* Button pressed animation */
+.key:active {
+    transform: translateY(2px) scale(0.95); /* Slightly smaller on press */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.14);
+}
+
+.key:focus {
     outline: none;
-    animation: bounce 0.3s;
 }
 
 /* Footer styles for version */
 footer {
     text-align: center;
-    margin-top: 20px;
     color: #666;
     font-size: 14px;
     position: fixed;
-    bottom: 10px;
-    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #f3f4f6;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }

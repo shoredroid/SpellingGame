@@ -45,6 +45,8 @@ Navigation Enhancements:
 
 -Added Version Code and Centered the overall layout.
 
+-NEW!!! Onboard Keyboard in Quiz Panel. No mobile keyboards with prediction on any platform!
+
 
 **Removed Features:**
 -------------------------------------------

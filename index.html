@@ -35,22 +35,71 @@
     <div id="quizPanel" style="display: none;">
         <h3>Spell the word:</h3>
         <p id="wordPrompt" class="wordPrompt"></p>
-        <input type="text" id="answer" placeholder="Your answer" autocomplete="off" spellcheck="false" />
-        <p id="feedback" class="feedback"></p>
-        
+        <div id="feedback" class="feedback" style="margin-top: 10px; color: #8e24aa;"></div> <!-- Feedback element -->
+
+        <!-- Form with custom keyboard and disabled default keyboard -->
+        <form autocomplete="off">
+            <input type="text" id="answer" readonly placeholder="Your answer" /> <!-- Default keyboard disabled -->
+        </form>
+
+        <!-- Custom Keyboard -->
+        <div class="custom-keyboard">
+            <div class="keyboard-row">
+                <button class="key" onclick="typeLetter('Q')">Q</button>
+                <button class="key" onclick="typeLetter('W')">W</button>
+                <button class="key" onclick="typeLetter('E')">E</button>
+                <button class="key" onclick="typeLetter('R')">R</button>
+                <button class="key" onclick="typeLetter('T')">T</button>
+                <button class="key" onclick="typeLetter('Y')">Y</button>
+                <button class="key" onclick="typeLetter('U')">U</button>
+                <button class="key" onclick="typeLetter('I')">I</button>
+                <button class="key" onclick="typeLetter('O')">O</button>
+                <button class="key" onclick="typeLetter('P')">P</button>
+            </div>
+            <!-- Add more rows as needed -->
+            <div class="keyboard-row">
+                <button class="key" onclick="typeLetter('A')">A</button>
+                <button class="key" onclick="typeLetter('S')">S</button>
+                <button class="key" onclick="typeLetter('D')">D</button>
+                <button class="key" onclick="typeLetter('F')">F</button>
+                <button class="key" onclick="typeLetter('G')">G</button>
+                <button class="key" onclick="typeLetter('H')">H</button>
+                <button class="key" onclick="typeLetter('J')">J</button>
+                <button class="key" onclick="typeLetter('K')">K</button>
+                <button class="key" onclick="typeLetter('L')">L</button>
+            </div>
+            <!-- Add more rows as needed -->
+            <div class="keyboard-row">
+                <button class="key" onclick="toggleCase()">⇧</button>
+                <button class="key" onclick="typeLetter('Z')">Z</button>
+                <button class="key" onclick="typeLetter('X')">X</button>
+                <button class="key" onclick="typeLetter('C')">C</button>
+                <button class="key" onclick="typeLetter('V')">V</button>
+                <button class="key" onclick="typeLetter('B')">B</button>
+                <button class="key" onclick="typeLetter('N')">N</button>
+                <button class="key" onclick="typeLetter('M')">M</button>
+                <button class="key enter" onclick="submitAnswer()">Enter</button>
+            </div>
+            <div class="keyboard-row">
+                <button class="key" onclick="deleteLetter()">←</button>
+            </div>
+        </div>
+
         <div class="score-section">
             <p>Points: <span id="pointsDisplay">0</span></p>
             <p class="money-display">Money: $<span id="moneyDisplay">0.00</span></p>
         </div>
-        
+
         <button class="btn" onclick="backToLanding()">Back to Landing Page</button>
     </div>
+
 </div>
 
 <!-- Footer with version code -->
 <footer>
-    <p>Version 1.5.5</p>
+    <p>Version 1.6.0</p>
 </footer>
 
 <script src="app.js"></script>
 </body>
+</html>
