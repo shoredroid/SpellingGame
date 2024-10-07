@@ -193,7 +193,15 @@
     window.onload = function() {
         updateScore(); // Ensure the points and money are displayed correctly
         nextWord(); // Load the first word in case quiz panel is opened
-    };
+    
+    // Add the touchend event listener to all keys to prevent the "sticking" active state
+    document.querySelectorAll('.key').forEach(key => {
+        key.addEventListener('touchend', function() {
+            // Force the active state to end after the button is pressed
+            this.classList.remove('active');
+        });
+    });
+};
 
     // Check if service workers are supported
     if ('serviceWorker' in navigator) {
